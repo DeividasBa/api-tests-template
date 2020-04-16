@@ -13,7 +13,7 @@
   // constructs urls
   exports.loadAndSetConfig = function () {
 
-    domains.api = process.env.API_URL_ROOT || 'https://postman-echo.com';
+    domains.api = process.env.API_URL_ROOT || 'https://api.monetha.io';
 
     // construct the rest of url values
     let env = environments.dev;
