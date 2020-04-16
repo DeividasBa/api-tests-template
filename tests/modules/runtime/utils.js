@@ -16,11 +16,23 @@
     return result;
   }
 
+  exports.BadRandomString = function (length, chars) {
+    let result = '';
+    for (let i = length; i > 0; --i) {
+      result += chars[Math.round(Math.random() * (chars.length - 1))];
+    }
+    return result;
+  }
+
   /**
    * Returns new random email
    */
   exports.randomEmail = function () {
     return this.randomString(20, 'zxcvbnmlkjhgfdsaqwertyuiop0987654321') + '@gmail.com';
+  }
+
+  exports.BadRandomEmail = function () {
+    return this.randomString(20, 'zxcvbnmlkjhgfdsaqwertyuiop0987654321') + '@gmail.';
   }
 
   /**
@@ -40,5 +52,20 @@
     let date = new Date();
     return date.getTime();
   };
+
+  exports.ccode = function () {
+    codelist = ["LS","LT", "LV","UK","RUS"];
+    let num = Math.floor(Math.random()*4);
+
+    return codelist[num];
+  }
+
+  exports.badCcode = function () {
+    codelist = ["LSv","LTv", "LVv","UKv","RUSv"];
+    let num = Math.floor(Math.random()*4);
+
+    return codelist[num];
+  }
+
 
 })();
